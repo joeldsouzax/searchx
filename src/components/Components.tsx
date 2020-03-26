@@ -10,7 +10,6 @@ export const Header = styled.div`
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: center;
-  position: fixed;
   background-color: #f5f8fa;
 `;
 
@@ -35,7 +34,6 @@ export const Root = styled.div`
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: black;
-  padding-top: 115px;
 `;
 
 export interface ButtonProps {
@@ -44,6 +42,7 @@ export interface ButtonProps {
 }
 
 export const Button = styled.button<ButtonProps>`
+  padding: 5px;
   font-size: ${props =>
     props.icon ? "calc(10px + 2vmin)" : "calc(8px + 2vmin)"};
   border: ${props => (props.icon ? "0px" : "1px solid hotpink")};
@@ -52,4 +51,19 @@ export const Button = styled.button<ButtonProps>`
   border-radius: 5px;
 `;
 
-export const H3 = styled.h3``;
+export const DropDown = {
+  body: styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  `,
+  label: styled.div``,
+  select: styled.select`
+    font-size: calc(10px + 2vmin);
+    color: palevioletred;
+  `
+};
+
+export const H3 = styled.h3`
+  font-size: calc(10px + 2vmin);
+`;

@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../../../../components";
 
+export interface TextProps {
+  gutterBottom?: Boolean;
+}
+
 const item = {
   body: styled.div`
     padding: 5px;
@@ -10,7 +14,13 @@ const item = {
     margin: 5px;
     border-radius: 5px;
   `,
-  title: styled.div`
+  title: styled.div<TextProps>`
+    padding-bottom: ${props => (props.gutterBottom ? "10px" : "")};
+    text-align: left;
+    font-size: 20px;
+  `,
+  paragraph: styled.div<TextProps>`
+    padding-bottom: ${props => (props.gutterBottom ? "10px" : "")};
     text-align: left;
     font-size: 16px;
   `,
@@ -34,7 +44,8 @@ export interface ProductProps {
 const Product: React.FC<ProductProps> = ({ name, type }) => (
   <item.body>
     <item.content>
-      <item.title>{`Product Name : ${name}`}</item.title>
+      <item.title gutterBottom>{`Product Name : ${name}`}</item.title>
+      <item.paragraph>{`Product Name : ${type}`}</item.paragraph>
     </item.content>
     <item.action>
       <Button primary>Add Product</Button>
