@@ -39,16 +39,20 @@ const item = {
 export interface ProductProps {
   name: string;
   type: string;
+  id: string;
+  add: (id: string) => void;
 }
 
-const Product: React.FC<ProductProps> = ({ name, type }) => (
+const Product: React.FC<ProductProps> = ({ name, type, id, add }) => (
   <item.body>
     <item.content>
       <item.title gutterBottom>{`Product Name : ${name}`}</item.title>
       <item.paragraph>{`Product Name : ${type}`}</item.paragraph>
     </item.content>
     <item.action>
-      <Button primary>Add Product</Button>
+      <Button onClick={() => add(id)} primary>
+        Add Product
+      </Button>
     </item.action>
   </item.body>
 );
