@@ -67,3 +67,38 @@ export const DropDown = {
 export const H3 = styled.h3`
   font-size: calc(10px + 2vmin);
 `;
+
+export const Modal = {
+  body: styled.div`
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  `,
+  content: styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    color: palevioletred;
+    text-align: center;
+  `,
+  close: styled.button`
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    background: red;
+    width: 100px;
+  `
+};
