@@ -7,6 +7,7 @@ const ProductsWindow = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Products: React.FC = () => (
