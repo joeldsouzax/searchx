@@ -20,7 +20,7 @@ const Search: React.FC = () => {
   ];
   const [type, setType] = React.useState<string>(productTypeSelect[0].value);
 
-  const [productData, setProductData] = React.useState(null);
+  const [productData, setProductData] = React.useState([] as any[]);
 
   const search = () => {
     const searchReq = {
@@ -62,7 +62,9 @@ const Search: React.FC = () => {
           Search
         </Button>
       </SearchBox>
-      {productData ? <Products /> : null}
+      {productData.length !== 0 ? (
+        <Products productsData={productData} />
+      ) : null}
     </React.Fragment>
   );
 };
